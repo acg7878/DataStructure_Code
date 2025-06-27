@@ -1,5 +1,10 @@
 # CPP output
 output
+*.exe
 
 # MAC
 .DS_Store
+
+# setting
+.idea
+.vscode

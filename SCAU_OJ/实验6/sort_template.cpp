@@ -1,6 +1,3 @@
-//
-// Created by EDY on 25-6-27.
-//
 #include <iostream>
 #include <vector>
 

@@ -1,33 +1,7 @@
 #include <iostream>
 #include <random>
 #include <vector>
-
-std::vector<int> createArr() {
-    std::vector<int> arr;
-    const int size = 10;
-    const int min_val = 1;
-    const int max_val = 100;
-
-    std::random_device rd;
-    std::mt19937 gen(rd());
-    std::uniform_int_distribution<> distrib(min_val, max_val);
-
-    arr.reserve(size);
-    for (int i = 0; i < size; ++i) {
-        arr.push_back(distrib(gen));
-    }
-    return arr;
-}
-// 打印 vector 信息的辅助函数
-void print_vector_info(const std::string& name, const std::vector<int>& vec) {
-    long long sum = 0;
-    std::cout << name << " (size=" << vec.size() << "): ";
-    for (int x : vec) {
-        std::cout << x << " ";
-        sum += x;
-    }
-    std::cout << "| Sum = " << sum << std::endl;
-}
+#include "../template.hpp"
 
 // -------------算法 begin---------------
 int partion(std::vector<int>& arr, int left, int right) {

@@ -18,7 +18,7 @@ struct BNode {
     T data;
     BNode<T>* lchild;
     BNode<T>* rchild;
-    LNode(const T& val) : data(val), lchild(nullptr), rchild(nullptr) {}
+    BNode(const T& val) : data(val), lchild(nullptr), rchild(nullptr) {}
 };
 
 // ---------- struct end-------------
@@ -51,7 +51,7 @@ LNode<int>* createList(int size = 10, int min_val = 1, int max_val = 100) {
     LNode<int>* current = head;
 
     // 创建剩余节点并连接
-    for (int i = 1; i < size; ++i) {
+    for (int i = 1; i <= size; ++i) {
         current->next = new LNode<int>(distrib(gen));
         current = current->next;
     }
@@ -71,4 +71,17 @@ void print_vector_info(const std::string& name, const std::vector<int>& vec) {
     std::cout << "| Sum = " << sum << std::endl;
 }
 
+template <typename T>
+void printList(LNode<T>* head) {
+    if (!head || !head->next) {
+        std::cout << "List is empty." << std::endl;
+        return;
+    }
+    LNode<T>* cur = head->next;
+    while (cur) {
+        std::cout << cur->data << " -> ";
+        cur = cur->next;
+    }
+    std::cout << "nullptr" << std::endl;
+}
 #endif  // TEMPLATE_HPP

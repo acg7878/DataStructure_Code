@@ -1,6 +1,5 @@
-#include "include/create.hpp"
-#include "include/print.hpp"
-#include "include/struct.hpp"
+#include "../template.hpp"
+
 void reverseList(LNode<int>* head) {
     LNode<int>* cur = head->next;
     LNode<int>* next = nullptr;

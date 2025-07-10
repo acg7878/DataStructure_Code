@@ -5,7 +5,8 @@
 #include <vector>
 #include "struct.hpp"
 
-inline std::vector<int> createArr(int size = 10, int min_val = 1, int max_val = 100) {
+inline std::vector<int> createArr(int size = 10, int min_val = 1,
+                                  int max_val = 100) {
     std::vector<int> arr;
 
     std::random_device rd;
@@ -19,7 +20,8 @@ inline std::vector<int> createArr(int size = 10, int min_val = 1, int max_val = 
     return arr;
 }
 
-inline LNode<int>* createList(int size = 10, int min_val = 1, int max_val = 100) {
+inline LNode<int>* createList(int size = 10, int min_val = 1,
+                              int max_val = 100) {
     if (size <= 0)
         return nullptr;
 

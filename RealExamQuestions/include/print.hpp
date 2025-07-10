@@ -6,7 +6,8 @@
 #include "struct.hpp"  // Include the struct definitions
 
 // 打印 vector 信息的辅助函数
-void print_vector_info(const std::string& name, const std::vector<int>& vec) {
+inline void print_vector_info(const std::string& name,
+                              const std::vector<int>& vec) {
     long long sum = 0;
     std::cout << name << " (size=" << vec.size() << "): ";
     for (int x : vec) {

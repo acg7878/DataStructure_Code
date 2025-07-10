@@ -26,8 +26,7 @@ void quick_sort(std::vector<int>& arr, int left, int right) {
     quick_sort(arr, pos + 1, right);
 }
 
-void partition_arr(std::vector<int> a,
-                   std::vector<int>& a1,
+void partition_arr(std::vector<int> a, std::vector<int>& a1,
                    std::vector<int>& a2) {
     // 排序 + 划分
     quick_sort(a, 0, a.size() - 1);

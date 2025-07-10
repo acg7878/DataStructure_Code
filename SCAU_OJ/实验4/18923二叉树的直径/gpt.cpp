@@ -1,6 +1,6 @@
+#include <algorithm>  // 用于 std::max
 #include <iostream>
 #include <vector>
-#include <algorithm> // 用于 std::max
 
 // 题目给定的节点结构
 struct BNode {
@@ -23,8 +23,10 @@ int calculate_depth_and_update_diameter(BNode* node, int& diameter) {
     }
 
     // 1. 递归计算左、右子树的深度
-    int left_depth = calculate_depth_and_update_diameter(node->lchild, diameter);
-    int right_depth = calculate_depth_and_update_diameter(node->rchild, diameter);
+    int left_depth =
+        calculate_depth_and_update_diameter(node->lchild, diameter);
+    int right_depth =
+        calculate_depth_and_update_diameter(node->rchild, diameter);
 
     // 2. 更新全局直径
     // 穿过当前节点的最长路径 = 左子树深度 + 右子树深度
@@ -97,7 +99,7 @@ int main() {
     calculate_depth_and_update_diameter(root, diameter);
 
     std::cout << diameter << std::endl;
-    
+
     // 释放动态分配的内存（好习惯，虽然在线评测系统不强制）
     for (int i = 1; i <= n; ++i) {
         delete nodes[i];

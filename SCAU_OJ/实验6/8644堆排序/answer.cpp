@@ -12,6 +12,8 @@ void print_arr(const std::vector<int>& arr) {
     }
     std::cout << std::endl;
 }
+
+// heapify：默认子树已经是大根堆了
 void heapify(std::vector<int>& arr, int n, int i) {
     // n为堆大小，i为需要调整的结点下标
     int largest = i;
@@ -29,8 +31,10 @@ void heapify(std::vector<int>& arr, int n, int i) {
 
 void heap_sort(std::vector<int>& arr) {
     int size = arr.size();
+    // size / 2 - 1 ： 最后一个非叶子节点
     for (int i = size / 2 - 1; i >= 0; i--) {
         heapify(arr, size, i);
+        // 要从下往上建堆
     }
     print_arr(arr);
     for (int i = size - 1; i > 0; i--) {
